@@ -10,11 +10,12 @@ require("vamshidhar.lazy")
 
 require("vamshidhar.plugins.theme-plugins.my_theme").config()
 
+require("vamshidhar.plugins.lualine").config()
+
 require("vamshidhar.plugins.nvim-treesitter")
 
-require("vamshidhar.plugins.oil.oil_config")
+require("vamshidhar.plugins.oil").config()
 
-require("vamshidhar.plugins.lualine.lualine_config")
 
 require("vamshidhar.plugins.nvim-autopairs")
 
