@@ -26,4 +26,6 @@ require("vamshidhar.plugins.formatter")
 
 require("vamshidhar.plugins.cmp")
 
+require("vamshidhar.diagnostics.diagnostics_config")
+
 
