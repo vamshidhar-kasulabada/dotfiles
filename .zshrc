@@ -35,6 +35,8 @@ export JAVA_HOME="/opt/homebrew/Cellar/openjdk@17/17.0.13"
 # Add Visual Studio Code (code)
 # export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
+export XDG_DATA_HOME="$HOME/.local/share"
+
 
 
 ##### functions #####
@@ -58,3 +60,5 @@ source <(ng completion script)
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
+# zoxide
+eval "$(zoxide init zsh)"
