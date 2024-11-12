@@ -34,6 +34,9 @@ require("formatter").setup({
 		javascript = {
 			prettier_format,
 		},
+		typescript = {
+			prettier_format,
+		},
 		html = {
 			prettier_format,
 		},
