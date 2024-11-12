@@ -16,6 +16,7 @@ local plugins = {
     require("vamshidhar.plugins.lualine.lualine_plugin"),
     require("vamshidhar.plugins.markdown-preview.markdown_preview_plugin"),
     require("vamshidhar.plugins.theme-plugins.my_theme").plugin,
+    require("vamshidhar.plugins.copilot").plugin,
 	"nvim-treesitter/nvim-treesitter",
 	"windwp/nvim-autopairs",
 	-- [[telescope]]

@@ -20,3 +20,7 @@ export PS1='\[\e[33m\]\W\[\e[0m\]\[\e[31m\]$(parse_git_branch)\[\e[0m\] \$ '
 
 # simple PS1 Variable without git 
 # export PS1='\[\e[33m\]\W\[\e[0m\] \$ '
+
+
+# Enable the copilot alias
+eval "$(gh copilot alias -- bash)"
