@@ -61,4 +61,4 @@ source <(ng completion script)
 source <(fzf --zsh)
 
 # zoxide
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd  zsh)"
