@@ -3,15 +3,9 @@ require("mason-lspconfig").setup({
 	ensure_installed = { "lua_ls", "ts_ls" },
 })
 
-local function on_attach()
-	local keymap = vim.api.nvim_set_keymap
-	local opts = { noremap = true, silent = true }
-	keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	keymap("n", "gk", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	keymap("n", "gr", "<Cmd> lua vim.lsp.buf.rename()<CR>", opts)
-end
+local on_attach = require("vamshidhar.plugins.lsp-config.lsp_config_on_attach").on_attach()
+
+
 
 require("lspconfig").pyright.setup({
 	on_attach = on_attach,
@@ -60,6 +54,10 @@ require("lspconfig").angularls.setup({
     on_attach = on_attach,
 })
 
+require("lspconfig").gopls.setup({
+    on_attach = on_attach
+})
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
@@ -77,3 +75,18 @@ require("lspconfig").emmet_ls.setup({
 	},
 })
 
+
+
+
+
+-- Function to modify the border for LSP hover and signature help with rounded corners
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = "rounded"  -- Options: "none", "single", "double", "rounded", "solid", "shadow"
+})
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help,{
+    border = "rounded"
+})
+
+require('lspconfig.ui.windows').default_options.border = 'rounded'
