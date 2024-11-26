@@ -25,6 +25,9 @@ end
 
 require("formatter").setup({
 	filetype = {
+        go = {
+			require("formatter.filetypes.go").gofmt,
+        },
 		lua = {
 			require("formatter.filetypes.lua").stylua,
 		},

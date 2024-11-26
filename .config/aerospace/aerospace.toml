@@ -184,6 +184,10 @@ run = 'move-node-to-workspace 1'
 if.app-id = 'net.whatsapp.WhatsApp'
 run = 'move-node-to-workspace W'
 
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+run = 'move-node-to-workspace B'
+
 
 
 

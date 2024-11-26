@@ -54,6 +54,10 @@ require("lspconfig").angularls.setup({
     on_attach = on_attach,
 })
 
+require("lspconfig").gopls.setup({
+    on_attach = on_attach
+})
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
