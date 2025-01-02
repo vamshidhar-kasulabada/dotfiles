@@ -18,7 +18,8 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Adding HomeBrew to Path
-export PATH="/opt/homebrew/bin:$PATH"
+# export PATH="/opt/homebrew/bin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # User binaries
 export PATH="$HOME/.bin:$PATH"
@@ -29,8 +30,17 @@ export PATH="$HOME/.bin:$PATH"
 
 
 ##### Environment Variable #####
+
 #Setting JAVA_HOME Path
-export JAVA_HOME="/opt/homebrew/Cellar/openjdk@17/17.0.13"
+
+# Get the latest Java version and set JAVA_HOME
+# prefred_java_version=17
+# latest_prefred_version=$(lua ~/.bin/java.lua $prefred_java_version)
+# export JAVA_HOME="/opt/homebrew/Cellar/openjdk@17/$latest_prefred_version"
+
+
+source ~/.bin/java_home
+
 
 # Add Visual Studio Code (code)
 # export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
