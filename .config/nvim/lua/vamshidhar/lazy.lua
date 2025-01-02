@@ -12,10 +12,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    require("vamshidhar.plugins.oil").plugin,
-    require("vamshidhar.plugins.lualine").plugin,
-    require("vamshidhar.plugins.markdown_preview").plugin,
-    require("vamshidhar.plugins.theme-plugins.my_theme").plugin,
+	require("vamshidhar.plugins.oil").plugin,
+	require("vamshidhar.plugins.lualine").plugin,
+	require("vamshidhar.plugins.markdown_preview").plugin,
+	require("vamshidhar.plugins.theme-plugins.my_theme").plugin,
+	require("vamshidhar.plugins.copilot").plugin,
+	require("vamshidhar.plugins.presense-nvim").plugin,
+    -- require("vamshidhar.plugins.neocord").plugin,
 	"nvim-treesitter/nvim-treesitter",
 	"windwp/nvim-autopairs",
 	-- [[telescope]]

@@ -10,7 +10,7 @@ return {
 				section_separators = " ",
 			},
 			sections = {
-				lualine_a = { "buffers" },
+				-- lualine_a = { "buffers" },
 				--lualine_c = { "hostname" },
 				-- lualine_x = { time },
 				lualine_y = { "location" },
