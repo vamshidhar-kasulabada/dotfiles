@@ -8,11 +8,6 @@ ZSH_THEME="robbyrussell"
 plugins=(git zsh-autosuggestions copypath jsontools web-search)
 source $ZSH/oh-my-zsh.sh
 
-##### NVM Configuration #####
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 ##### PATH #####
 
@@ -23,6 +18,14 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # User binaries
 export PATH="$HOME/.bin:$PATH"
+
+##### NVM Configuration #####
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 
 # Adding Mongodb to Path
 # export PATH="$PATH:/usr/local/mongodb/aarch64-6.0.3/bin"
@@ -46,6 +49,7 @@ source ~/.bin/java_home
 # export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 
 
@@ -65,7 +69,7 @@ alias cdls="source cdls"
 ##### Completions #####
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
