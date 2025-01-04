@@ -1,9 +1,9 @@
 -- Modules in basic folder have nothing to do with lazy.nvim of any other plugins
 require("vamshidhar.basic.options")
-
+--
 require("vamshidhar.basic.keymaps")
 
---require("vamshidhar.basic.autocommands")
+-- require("vamshidhar.basic.autocommands")
 
 -- Lazy should be loaded before any other plugin
 require("vamshidhar.lazy")
