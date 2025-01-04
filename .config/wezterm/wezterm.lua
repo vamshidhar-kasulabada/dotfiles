@@ -17,17 +17,19 @@ config.colors = {
 config.window_decorations = "RESIZE"
 
 -- 0.0 to 1.0
-config.window_background_opacity = 0.8
-config.macos_window_background_blur = 100
+-- config.window_background_opacity = 0.8
+-- config.macos_window_background_blur = 100
 -- 0.0 to 1.0
-config.text_background_opacity = 0.7
+-- config.text_background_opacity = 0.7
 
 -- only absolute path works
--- config.window_background_image = "/Users/vamshidhar/.config/wezterm/back_image.jpg"
+-- config.window_background_image = "/Users/vamshidhar/.config/wezterm/backdrops/japanese-temple.jpg"
+config.window_background_image = require("lib.random_backdrop")
+
 
 config.window_background_image_hsb = {
 	-- Darken the background image by reducing it to 1/3rd
-	brightness = 0.05,
+	brightness = 0.01,
 
 	-- You can adjust the hue by scaling its value.
 	-- a multiplier of 1.0 leaves the value unchanged.
