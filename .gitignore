@@ -7,3 +7,9 @@
 
 .config/wireshark
 
+.config/lazygit
+
+.config/go
+
+.config/nvim/lazy-lock.json
+
