@@ -16,6 +16,8 @@ require("vamshidhar.plugins.nvim-treesitter")
 
 require("vamshidhar.plugins.oil").config()
 
+require("vamshidhar.plugins.telescope").config()
+
 
 require("vamshidhar.plugins.nvim-autopairs")
 

@@ -18,15 +18,10 @@ local plugins = {
 	require("vamshidhar.plugins.theme-plugins.my_theme").plugin,
 	require("vamshidhar.plugins.copilot").plugin,
 	require("vamshidhar.plugins.presense-nvim").plugin,
+    require("vamshidhar.plugins.telescope").plugin,
     -- require("vamshidhar.plugins.neocord").plugin,
 	"nvim-treesitter/nvim-treesitter",
 	"windwp/nvim-autopairs",
-	-- [[telescope]]
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
 	{
 		-- mason
 		"williamboman/mason.nvim",
