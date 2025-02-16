@@ -18,9 +18,7 @@ require("vamshidhar.plugins.oil").config()
 
 require("vamshidhar.plugins.telescope").config()
 
-
 require("vamshidhar.plugins.nvim-autopairs")
-
 
 require("vamshidhar.plugins.lsp-config.lsp_config")
 
@@ -29,5 +27,3 @@ require("vamshidhar.plugins.formatter")
 require("vamshidhar.plugins.cmp")
 
 require("vamshidhar.diagnostics.diagnostics_config")
-
-

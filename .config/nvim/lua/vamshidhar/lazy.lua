@@ -19,6 +19,7 @@ local plugins = {
 	require("vamshidhar.plugins.copilot").plugin,
 	require("vamshidhar.plugins.presense-nvim").plugin,
     require("vamshidhar.plugins.telescope").plugin,
+    require("vamshidhar.plugins.indent-blankline").plugin,
     -- require("vamshidhar.plugins.neocord").plugin,
 	"nvim-treesitter/nvim-treesitter",
 	"windwp/nvim-autopairs",
