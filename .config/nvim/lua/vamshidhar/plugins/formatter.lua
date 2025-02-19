@@ -25,19 +25,22 @@ end
 
 require("formatter").setup({
 	filetype = {
-        go = {
+		go = {
 			require("formatter.filetypes.go").gofmt,
-        },
+		},
 		lua = {
 			require("formatter.filetypes.lua").stylua,
 		},
 		java = {
-            clang_format
+			clang_format,
 		},
 		javascript = {
 			prettier_format,
 		},
 		typescript = {
+			prettier_format,
+		},
+		htmlangular = {
 			prettier_format,
 		},
 		html = {
@@ -46,6 +49,9 @@ require("formatter").setup({
 		css = {
 			prettier_format,
 		},
+        less={
+            prettier_format,
+        },
 		python = {
 			require("formatter.filetypes.python").black,
 		},
@@ -55,12 +61,12 @@ require("formatter").setup({
 		cpp = {
 			clang_format,
 		},
-        sh = {
+		sh = {
 			require("formatter.filetypes.sh").shfmt,
-        },
-        xml = {
-            require("formatter.filetypes.xml").xmlformat,
-        },
+		},
+		xml = {
+			require("formatter.filetypes.xml").xmlformat,
+		},
 		["*"] = {
 			-- "formatter.filetypes.any" defines default configurations for any
 			-- filetype
