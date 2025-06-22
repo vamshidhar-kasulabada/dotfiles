@@ -1,9 +1,11 @@
 -- Modules in basic folder have nothing to do with lazy.nvim of any other plugins
-require("vamshidhar.basic.options")
+require("vamshidhar.core.options")
 --
-require("vamshidhar.basic.keymaps")
+require("vamshidhar.core.keymaps")
 
--- require("vamshidhar.basic.autocommands")
+require("vamshidhar.core.autocommands")
+
+require("vamshidhar.core.lsp")
 
 -- Lazy should be loaded before any other plugin
 require("vamshidhar.lazy")
@@ -18,12 +20,12 @@ require("vamshidhar.plugins.oil").config()
 
 require("vamshidhar.plugins.telescope").config()
 
+require("vamshidhar.plugins.mason").config()
+
+require("vamshidhar.plugins.gitsigns").config()
+
 require("vamshidhar.plugins.nvim-autopairs")
 
-require("vamshidhar.plugins.lsp-config.lsp_config")
-
 require("vamshidhar.plugins.formatter")
-
-require("vamshidhar.plugins.cmp")
 
 require("vamshidhar.diagnostics.diagnostics_config")

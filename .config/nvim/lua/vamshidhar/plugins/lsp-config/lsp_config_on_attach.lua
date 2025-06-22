@@ -1,4 +1,3 @@
-
 local function on_attach_all()
 	local keymap = vim.api.nvim_set_keymap
 	local opts = { noremap = true, silent = true }
@@ -35,7 +34,7 @@ local function on_attach_java()
 	keymap("v", "<leader>crm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", { desc = "Extract Method" })
 end
 
-return{
-    on_attach = on_attach_all,
-    on_attach_java = on_attach_java
+return {
+	on_attach = on_attach_all,
+	on_attach_java = on_attach_java,
 }

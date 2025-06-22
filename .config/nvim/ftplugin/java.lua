@@ -1,11 +1,8 @@
-
 local os_type = require("lib.detectOs")
-
 
 local home = os.getenv("HOME")
 local nvim_app_data_dir = home .. "/.local/share/nvim"
 local jdtls_workspace_dir = nvim_app_data_dir .. "/jdtls-workspace"
-local java_home = os.getenv("JAVA_HOME")
 
 -- local workspace_path
 --
@@ -17,10 +14,6 @@ local java_home = os.getenv("JAVA_HOME")
 -- 	home = os.getenv("HOME")
 -- 	workspace_path = home .. "/.local/share/nvim/jdtls-workspace/"
 -- end
-
-
-
-
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = jdtls_workspace_dir .. "/" .. project_name
@@ -34,7 +27,8 @@ local extendedClientCapabilities = jdtls.extendedClientCapabilities
 local config = {
 	cmd = {
 		-- "java",
-        java_home .. "/bin/java",
+		-- java_home .. "/bin/java",
+        "/opt/jvm/amazon-corretto-17.jdk/Contents/Home/bin/java",
 		"-Declipse.application=org.eclipse.jdt.ls.core.id1",
 		"-Dosgi.bundles.defaultStartLevel=4",
 		"-Declipse.product=org.eclipse.jdt.ls.core.product",
@@ -46,7 +40,7 @@ local config = {
 		"java.base/java.util=ALL-UNNAMED",
 		"--add-opens",
 		"java.base/java.lang=ALL-UNNAMED",
-		"-javaagent:".. nvim_app_data_dir .. "/mason/packages/jdtls/lombok.jar",
+		"-javaagent:" .. nvim_app_data_dir .. "/mason/packages/jdtls/lombok.jar",
 		"-jar",
 		vim.fn.glob(nvim_app_data_dir .. "/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
 		"-configuration",
@@ -88,7 +82,6 @@ local config = {
 
 --on_attach()
 require("jdtls").start_or_attach(config)
-
 
 -- Function to format Java files using the binary
 local function format_java()

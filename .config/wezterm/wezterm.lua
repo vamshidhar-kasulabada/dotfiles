@@ -26,7 +26,6 @@ config.window_decorations = "RESIZE"
 -- config.window_background_image = "/Users/vamshidhar/.config/wezterm/backdrops/japanese-temple.jpg"
 config.window_background_image = require("lib.random_backdrop")
 
-
 config.window_background_image_hsb = {
 	-- Darken the background image by reducing it to 1/3rd
 	brightness = 0.01,

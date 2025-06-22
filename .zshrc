@@ -11,6 +11,12 @@ source $ZSH/oh-my-zsh.sh
 
 ##### PATH #####
 
+# language servers
+# export PATH="/opt/lsp/bin:$PATH"
+
+# go binary path
+export PATH="/opt/go/go1.24.3/bin:$PATH"
+
 
 # Adding HomeBrew to Path
 # export PATH="/opt/homebrew/bin:$PATH"
@@ -42,7 +48,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # export JAVA_HOME="/opt/homebrew/Cellar/openjdk@17/$latest_prefred_version"
 
 
-source ~/.bin/java_home
+# source ~/.bin/java_home
+export JAVA_HOME="/opt/jvm/amazon-corretto-21.jdk/Contents/Home"
+export GO111MODULE=on
 
 
 # Add Visual Studio Code (code)

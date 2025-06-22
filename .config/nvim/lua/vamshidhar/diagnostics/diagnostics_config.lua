@@ -1,8 +1,9 @@
 vim.diagnostic.config({
+    -- virtual_lines = true,  -- Disables virtual lines for diagnostics
     virtual_text = false,  -- Disables inline virtual text for diagnostics
     signs = true,          -- Enables signs in the gutter for diagnostics
     update_in_insert = false,  -- Prevent diagnostics from updating in insert mode
-    float = { border = "rounded" }  -- Sets a single-line border for floating diagnostic windows
+    -- float = { border = "rounded" }  -- Sets a single-line border for floating diagnostic windows --already set with windborder in options.lua
 })
 
 
