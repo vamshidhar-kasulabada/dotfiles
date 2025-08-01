@@ -42,3 +42,9 @@ vim.api.nvim_create_autocmd("LspAttach",{
 
   end,
 })
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = { "typescript" },
+--   callback = function(opts)
+--       print(vim.api.nvim_buf_get_name(opts.buf))
+--   end,
+-- })
