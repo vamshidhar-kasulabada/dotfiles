@@ -17,3 +17,6 @@
 
 .config/mimeapps.list
 
+.config/dconf
+.config/wslu
+.config/git
