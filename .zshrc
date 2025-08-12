@@ -14,9 +14,6 @@ source $ZSH/oh-my-zsh.sh
 # language servers
 # export PATH="/opt/lsp/bin:$PATH"
 
-# go binary path
-export PATH="/opt/go/go1.24.3/bin:$PATH"
-
 
 # Adding HomeBrew to Path
 # export PATH="/opt/homebrew/bin:$PATH"
@@ -40,6 +37,10 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 ##### Environment Variable #####
 
+# Setting Mono Path
+export FrameworkPathOverride=/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/4.7.2-api
+
+
 #Setting JAVA_HOME Path
 
 # Get the latest Java version and set JAVA_HOME
@@ -49,7 +50,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 
 # source ~/.bin/java_home
-export JAVA_HOME="/opt/jvm/amazon-corretto-21.jdk/Contents/Home"
+export JAVA_HOME="/opt/jvm/amazon-corretto-17.jdk/Contents/Home"
+export JAVA_21="$HOME/opt/java/amazon-corretto-21/Contents/Home/bin/java"
 export GO111MODULE=on
 
 

@@ -11,12 +11,22 @@ local function on_attach_all()
 	keymap("n", "gH", "<Cmd> lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>", {
 		desc = "Toggle Inlay Hints",
 	})
+	keymap("n", "<leader>lf", "<Cmd> lua vim.lsp.buf.format()<CR>", {
+		desc = "[LSP] Format Document",
+		noremap = true,
+		silent = true,
+	})
 end
 
 local function on_attach_java()
 	local keymap = vim.api.nvim_set_keymap
 	local opts = { noremap = true, silent = true }
 	keymap("n", "<leader>co", "<Cmd>lua require'jdtls'.organize_imports()<CR>", { desc = "Organize Imports" })
+	keymap("n", "<leader>lf", "<Cmd> lua vim.lsp.buf.format()<CR>", {
+		desc = "[LSP] Format Document",
+		noremap = true,
+		silent = true,
+	})
 	keymap("n", "<leader>crv", "<Cmd>lua require('jdtls').extract_variable()<CR>", { desc = "Extract Variable" })
 	keymap(
 		"v",

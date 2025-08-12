@@ -31,6 +31,8 @@ require("lazy").setup({
 		require("vamshidhar.plugins.completion").plugin,
 		require("vamshidhar.plugins.mason").plugin,
         require("vamshidhar.plugins.gitsigns").plugin,
+        require("vamshidhar.plugins.typr").plugin,
+        require("vamshidhar.plugins.smear").plugin,
 		"mfussenegger/nvim-jdtls",
 		"nvim-treesitter/nvim-treesitter",
 		"windwp/nvim-autopairs",
