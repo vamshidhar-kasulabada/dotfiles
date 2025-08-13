@@ -1,0 +1,112 @@
+##### ENV VARS #####
+if [ -f ~/.env_vars ]; then
+    source ~/.env_vars
+fi
+
+
+
+##### Adding Custom Prompt #####
+# PROMPT="%U%F{yellow}%1~%f%u %F{blue}$%f "
+
+
+##### OH-MY-ZSH Configuration
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+plugins=(git zsh-autosuggestions copypath jsontools web-search)
+source $ZSH/oh-my-zsh.sh
+
+##### NVM Configuration #####
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+##### PATH #####
+# export CHROME_BIN="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
+# export CHROME_USER_DATA_DIR="$(wslpath "$(cmd.exe /c echo %TEMP%")")/chrome-user-data"
+# export CHROME_BIN="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
+export CHROME_BIN="/usr/bin/google-chrome"
+export BROWSER=wslview
+export M2_HOME=/opt/maven
+export PATH=$M2_HOME/bin:$PATH
+
+
+export NVIM_DIR=~/opt/nvim/v0.11.3/nvim-linux-x86_64/bin
+export PATH=$NVIM_DIR:$PATH
+export PATH="$HOME/opt/lazygit:$PATH"
+
+
+##### JAVA HOME #####
+export JAVA_21="$HOME/opt/java/amazon-corretto-21/bin/java"
+export JAVA_HOME="$HOME/opt/java/amazon-corretto-17"
+export PATH=$JAVA_HOME/bin:$PATH
+
+##### GRADLE #####
+export GRADLE_HOME="${HOME}/opt/gradle/gradle-9.0.0"
+export PATH=${GRADLE_HOME}/bin:${PATH}
+
+
+
+
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+# User binaries
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+# export WEZTERM_CONFIG_FILE="$HOME/.config/wezterm/wezterm.lua"
+
+# export XDG_DATA_HOME="$HOME/.local/share"
+
+
+
+
+##### functions #####
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+
+
+##### alias's #####
+
+alias src="source ~/.zshrc"
+alias ui-adv="cd ~/workspace/frontend/a200206_dete-app-ui-advanced-config/ && wezterm.exe cli set-tab-title ui-advanced-config"
+
+
+
+##### Completions #####
+
+# Load Angular CLI autocompletion.
+# source <(ng completion script)
+
+# Set up fzf key bindings and fuzzy completion
+# source <(fzf --zsh) // working without this command for wsl2(Ubuntu, Zsh)
+
+# zoxide 
+eval "$(zoxide init --cmd cd  zsh)"
+
+ui(){
+    cd "$@" && wezterm.exe cli set-tab-title "$(pwd | awk -F'ui' '{print "ui"$2}')"
+}
+
+token(){
+    env_name="$1"
+    if [ "$env_name" = "dev2" ]; then
+        username="$DEV_USERNAME"
+        password="$DEV_PASSWORD"
+    elif [ "$env_name" = "qa" ]; then
+        username="$QA_USERNAME"
+        password="$QA_PASSWORD"
+    else
+        echo "Unknown environment: $env_name"
+        return 1
+    fi
+
+    result=$(curl -X POST "https://$env_name.onesourcetax.com/$env_name/home-security/api/security/v1/sessions/fromusermodel" \
+      -H "Content-Type: application/json" \
+      -d "{\"username\":\"$username\",\"password\":\"$password\"}" | tr -d '"')
+    echo -n "$result" | win32yank.exe -i
+    echo "$result"
+}
